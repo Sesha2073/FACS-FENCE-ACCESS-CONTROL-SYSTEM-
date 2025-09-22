@@ -1,0 +1,87 @@
+{
+  "version": 1,
+  "author": "WHITE PANDA",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-arduino-uno", "id": "uno", "top": 0, "left": 0, "attrs": {} },
+    {
+      "type": "wokwi-led",
+      "id": "led1",
+      "top": -147.6,
+      "left": 445.4,
+      "attrs": { "color": "red" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": -24,
+      "left": 450.65,
+      "rotate": 90,
+      "attrs": { "value": "1000" }
+    },
+    { "type": "wokwi-slide-switch", "id": "sw1", "top": -206.8, "left": 89.5, "attrs": {} },
+    {
+      "type": "wokwi-buzzer",
+      "id": "bz1",
+      "top": -160.8,
+      "left": 280.2,
+      "attrs": { "volume": "0.1" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led2",
+      "top": -147.6,
+      "left": 570.2,
+      "attrs": { "color": "green" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r2",
+      "top": -24,
+      "left": 575.45,
+      "rotate": 90,
+      "attrs": { "value": "220" }
+    },
+    { "type": "wokwi-potentiometer", "id": "pot1", "top": -126.1, "left": -153.8, "attrs": {} },
+    {
+      "type": "wokwi-lcd1602",
+      "id": "lcd1",
+      "top": 265.6,
+      "left": 130.4,
+      "attrs": { "pins": "i2c" }
+    },
+    { "type": "wokwi-gas-sensor", "id": "gas1", "top": 290.7, "left": -319.4, "attrs": {} },
+    {
+      "type": "wokwi-pir-motion-sensor",
+      "id": "pir1",
+      "top": -130.4,
+      "left": -381.78,
+      "attrs": {}
+    }
+  ],
+  "connections": [
+    [ "bz1:1", "uno:GND.1", "black", [ "v76.8", "h-191.7" ] ],
+    [ "led1:C", "uno:GND.1", "black", [ "v105.6", "h-344.9" ] ],
+    [ "led1:A", "r1:1", "red", [ "v0" ] ],
+    [ "led2:A", "r2:1", "red", [ "v0" ] ],
+    [ "led2:C", "uno:GND.1", "black", [ "v0" ] ],
+    [ "r1:2", "uno:9", "green", [ "h0" ] ],
+    [ "r2:2", "uno:10", "green", [ "h0" ] ],
+    [ "bz1:2", "uno:11", "green", [ "v0" ] ],
+    [ "pot1:VCC", "uno:5V", "red", [ "v48", "h-0.8", "v201.1" ] ],
+    [ "pot1:GND", "uno:GND.2", "black", [ "v0" ] ],
+    [ "pot1:SIG", "uno:A0", "green", [ "v0" ] ],
+    [ "sw1:2", "uno:2", "green", [ "h-143.9", "v181.8" ] ],
+    [ "sw1:3", "uno:3", "green", [ "h125", "v181.8" ] ],
+    [ "lcd1:SDA", "uno:A4", "green", [ "h-28.8", "v-95.8", "h115.2" ] ],
+    [ "lcd1:SCL", "uno:A5", "green", [ "h-48", "v-95.7", "h153.6" ] ],
+    [ "lcd1:VCC", "uno:5V", "red", [ "h-28.8", "v-95.9", "h48" ] ],
+    [ "pir1:VCC", "uno:5V", "red", [ "v278.4", "h505.6" ] ],
+    [ "pir1:GND", "uno:GND.2", "black", [ "v259.2", "h495.64" ] ],
+    [ "pir1:OUT", "uno:6", "green", [ "v0" ] ],
+    [ "gas1:VCC", "uno:5V", "red", [ "h240", "v-116.1", "h105.6" ] ],
+    [ "gas1:GND", "uno:GND.2", "black", [ "h240", "v-106.4", "h105.6" ] ],
+    [ "gas1:AOUT", "uno:A1", "green", [ "h259.2", "v-96", "h9.6" ] ]
+  ],
+  "dependencies": {}
+}
